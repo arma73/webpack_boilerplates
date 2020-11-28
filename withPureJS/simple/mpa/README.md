@@ -16,7 +16,7 @@ cd webpack-templates
 npm install
 yarn
 
-# Server with hot reload at http://localhost:8081/
+# Server with hot reload at http://localhost:8080/
 npm run dev
 yarn dev
 

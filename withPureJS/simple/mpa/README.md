@@ -3,6 +3,14 @@
   <h1>Simple_MPA</h1>
 </div>
 
+<br />
+
+<div align="center">
+  <!-- Contributors welcome -->
+    <img src="https://img.shields.io/badge/contributions-welcome-orange.svg?longCache=true&style=flat-square"
+      alt="Last update" />
+</div>
+
 ## Build Setup:
 
 ``` bash

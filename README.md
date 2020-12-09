@@ -5,7 +5,8 @@
 
 ## Structure:
 
-* `withPureJS/simple/mpa` - config for multi-page application
+* `withJSX/enterprise/SPA` - config for the React project.
+* `withPureJS/simple/MPA` - config for multi-page application.
 
 ## License
 [MIT](./LICENSE)

@@ -64,7 +64,7 @@
         "react/jsx-first-prop-new-line": 0,
         "react/jsx-props-no-spreading": 0,
         "react/static-property-placement": 0,
-        "react/jsx-indent-props": [2, "tab"],
+        "react/jsx-indent-props": [2, 4],
 
         //JSX
         "jsx-a11y/label-has-associated-control": 0,

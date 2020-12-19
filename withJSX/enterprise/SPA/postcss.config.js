@@ -5,6 +5,8 @@ module.exports = ({ env }) => ({
     "plugins": {
         // PostCSS plugin to transform @import rules by inlining content.
         "postcss-import": {},
+        // PostCSS plugin to unwrap nested rules like how Sass does it.
+        "postcss-nested": {},
         // PostCSS plugin for Sass-like variables. ex. $blue: #056ef0;
         "postcss-simple-vars": {
             // Left unknown variables in CSS and do not throw an error. Default is false.

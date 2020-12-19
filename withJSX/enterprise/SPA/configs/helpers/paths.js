@@ -38,6 +38,6 @@ module.exports = {
     "appBuildStatic": resolveApp(join("dist", "static")),
     "appStyles": resolveApp(join("public", "static", "css")),
     "appEntryJS": resolveModule(resolveApp, join("src", "app", "index")),
-    "appStyleIcons": resolveModule(resolveApp, join("src", "theme", "icons")),
+    "appStyleIcons": resolveApp(join("src", "theme", "icons")),
     "appHtml": resolveApp(join("public", "static", "html", "index.html")),
 };

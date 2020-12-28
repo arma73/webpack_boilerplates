@@ -20,7 +20,8 @@ if (!existsSync(envFile)) {
     envFile = pathEnv;
 }
 
-// Parses the file of the area variable (.env. *) and returns in the "parsed" key an object that contains the values of the area variables that we set
+// Parses the file of the area variable (.env. *) and returns in the "parsed"
+// key an object that contains the values of the area variables that we set
 const { parsed } = dotenv.config({
     "path": envFile,
 });

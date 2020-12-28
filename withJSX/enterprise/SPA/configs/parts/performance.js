@@ -1,6 +1,7 @@
 "use-strict";
 
-// These options allows you to control how webpack notifies you of assets and entry points that exceed a specific file limit.
+// These options allows you to control how webpack notifies you of 
+// assets and entry points that exceed a specific file limit.
 module.exports = {
     "performance": {
         "hints": "warning",

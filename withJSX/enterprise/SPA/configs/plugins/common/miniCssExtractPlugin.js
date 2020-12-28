@@ -7,8 +7,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { development } = require("../../helpers/options");
 
 /**
- * This plugin extracts CSS into separate files. It creates a CSS file per JS file which contains CSS. 
- * It supports On-Demand-Loading of CSS and SourceMaps.
+ * This plugin extracts CSS into separate files. It creates a CSS file 
+ * per JS file which contains CSS. It supports On-Demand-Loading of CSS and SourceMaps.
  */
 module.exports = () => [
     new MiniCssExtractPlugin({

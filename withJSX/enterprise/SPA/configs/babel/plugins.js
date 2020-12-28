@@ -15,6 +15,7 @@ module.exports = ({ development, production }) => {
                 "legacy": true,
             }
         ],
+        "babel-plugin-dynamic-import-node",
         "@babel/plugin-proposal-class-properties",
         "@babel/plugin-proposal-export-default-from",
         "@babel/plugin-proposal-optional-chaining", // object?.prop

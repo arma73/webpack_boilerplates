@@ -24,10 +24,11 @@ module.exports = () => {
             styleLoader(),
         ].filter(Boolean);
     };
-
+    
+    // TODO: Separate .css and m.css
     return [
         {
-            "test": /\.s?(a|c)?ss$/,
+            "test": /\.css$/,
             "use": [
                 ...baseLoader(),
                 cssLoader({
@@ -35,11 +36,20 @@ module.exports = () => {
                 }),
                 postcssLoader({
                     "sourceMap": development,
-                }),
-                sassLoader({
-                    "sourceMap": development,
                 })
             ],
         },
+        {
+            "test": /\.s(a|c)ss$/,
+            "use": [
+                ...baseLoader(),
+                cssLoader({
+                    "importLoaders": 2,
+                }),
+                sassLoader({
+                    "sourceMap": development,
+                }),
+            ]
+        }
     ];
 };

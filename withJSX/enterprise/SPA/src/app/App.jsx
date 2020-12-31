@@ -1,7 +1,5 @@
-// Core
 import { hot } from "react-hot-loader/root";
 
-// Styles
 import "normalize.css";
 
 const App = () => (

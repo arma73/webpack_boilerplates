@@ -3,8 +3,7 @@
 // Core
 const { 
     "ids": { HashedModuleIdsPlugin }, 
-    "optimize": { AggressiveMergingPlugin }, 
-    ContextReplacementPlugin 
+    "optimize": { AggressiveMergingPlugin }
 } = require("webpack");
 
 module.exports = () => [
@@ -18,11 +17,5 @@ module.exports = () => [
     // For production configuration with optimization
     new AggressiveMergingPlugin({
         "minSizeReduce": 1.6,
-    }),
-    // Context refers to a require with an expression such as 
-    // require('./locale/' + name + '.json'). When encountering such an expression,
-    // webpack infers the directory ('./locale/') and a regular expression 
-    // (/^.*\.json$/). Since the name is not known at compile time, webpack includes 
-    // every file as module in the bundle.
-    new ContextReplacementPlugin(),
+    })
 ];

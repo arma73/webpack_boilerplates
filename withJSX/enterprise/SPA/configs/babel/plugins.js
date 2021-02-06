@@ -6,7 +6,6 @@ module.exports = ({ development, production }) => {
             "@babel/plugin-transform-runtime",
             {
                 "regenerator": true,
-                "corejs": 3,
             }
         ],
         [
@@ -15,7 +14,6 @@ module.exports = ({ development, production }) => {
                 "legacy": true,
             }
         ],
-        "babel-plugin-dynamic-import-node",
         "@babel/plugin-proposal-class-properties",
         "@babel/plugin-proposal-export-default-from",
         "@babel/plugin-proposal-optional-chaining", // object?.prop
@@ -26,9 +24,10 @@ module.exports = ({ development, production }) => {
 
     ];
 
-    if (development) {
+    development &&
         plugins.push("react-hot-loader/babel");
-    } else if (production) {
+
+    production &&
         plugins.push([
             "babel-plugin-transform-react-remove-prop-types",
             {
@@ -37,6 +36,6 @@ module.exports = ({ development, production }) => {
                 "ignoreFilenames": ["node_modules"]
             }
         ]);
-    }
+
     return plugins;
 };

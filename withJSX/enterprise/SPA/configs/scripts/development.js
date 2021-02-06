@@ -12,11 +12,11 @@ const { "areaEnv": { "REACT_APP_PORT": PORT, "REACT_APP_HOST": HOST } } = requir
 const choosePort = require("../utils/choosePort");
 
 // Parts
-const getOptionsDevServer = require("../parts/devServer");
+const options = require("../parts/development/devServer");
 
 const setupCompiler = async config => {
     try {
-        const chosenPort = await choosePort(+PORT);
+        const chosenPort = await choosePort(PORT, options.host);
 
         if (!chosenPort) {
             console.log(
@@ -24,16 +24,19 @@ const setupCompiler = async config => {
             );
             return null;
         }
+        
+        const openPage = `http://${HOST}:${chosenPort}`;
+        Object.assign(options, {
+            "port": chosenPort,
+            openPage,
+        });
 
         const compiler = await webpack(config);
-        const options = getOptionsDevServer(compiler);
         const server = new WebpackDevServer(compiler, options);
 
         server.listen(chosenPort, options.host, () => {
             console.log(
-                `${chalk.greenBright("➡ Server listening on")} ${chalk.blueBright(
-                    `http://${HOST}:${chosenPort}`
-                )}`
+                `${chalk.greenBright("➡ Server listening on")} ${chalk.blueBright(openPage)}`
             );
         });
     } catch (error) {

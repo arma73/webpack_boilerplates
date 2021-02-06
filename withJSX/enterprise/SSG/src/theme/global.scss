@@ -1,0 +1,18 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.preserve-3d {
+    transform-style: preserve-3d;
+}
+
+.non-selective {
+    user-select: none;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

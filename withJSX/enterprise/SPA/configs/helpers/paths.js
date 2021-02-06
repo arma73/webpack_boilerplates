@@ -2,42 +2,35 @@
 
 // Core
 const { realpathSync } = require("fs");
-const { join, resolve } = require("path");
+const { join } = require("path");
+
+// TODO: refactor later
+// Canonical path to application directory
+const rootPath = realpathSync(process.cwd());
 
 // Utils
 const getPublicUrl = require("../utils/getPublicUrl");
 const getServedPath = require("../utils/getServedPath");
-const resolveModule = require("../utils/resolveModule");
-
-// Canonical path to application directory
-const appDirectory = realpathSync(process.cwd());
-
-/**
- * Getting an absolute path from a relative path
- * @param {string} relativePath Relative path to the module
- * 
- * @returns {string} Absolute path to the file
- */
-const resolveApp = relativePath => resolve(appDirectory, relativePath);
+const getAbsolutePath = require("../utils/getAbsolutePath")(rootPath);
 
 module.exports = {
-    "appPath": resolveApp("."),
-    "appSrc": resolveApp("src"),
-    "dotenv": resolveApp(".env"),
-    "appBuild": resolveApp("dist"),
-    "appCache": resolveApp(".cache"),
-    "appPublic": resolveApp("public"),
-    "yarnLockFile": resolveApp("yarn.lock"),
-    "dotenvProd": resolveApp(".env.production"),
-    "appNodeModules": resolveApp("node_modules"),
-    "appPackageJSON": resolveApp("package.json"),
-    "publicUrl": getPublicUrl(resolveApp("package.json")),
-    "appStatic": resolveApp(join("public", "static")),
-    "appAssets": resolveApp(join("public", "assets")),
-    "servedPath": getServedPath(resolveApp("package.json")),
-    "appBuildStatic": resolveApp(join("dist", "static")),
-    "appStyles": resolveApp(join("public", "static", "css")),
-    "appEntryJS": resolveModule(resolveApp, join("src", "app", "index")),
-    "appStyleIcons": resolveApp(join("src", "theme", "icons")),
-    "appHtml": resolveApp(join("public", "static", "html", "index.html")),
+    rootPath,
+    "appSrc": getAbsolutePath("src"),
+    "dotenv": getAbsolutePath(".env"),
+    "appBuild": getAbsolutePath("dist"),
+    "appConfig": getAbsolutePath("configs"),
+    "appCache": getAbsolutePath(".cache"),
+    "appPublic": getAbsolutePath("public"),
+    "yarnLockFile": getAbsolutePath("yarn.lock"),
+    "dotenvProd": getAbsolutePath(".env.production"),
+    "appNodeModules": getAbsolutePath("node_modules"),
+    "appPackageJSON": getAbsolutePath("package.json"),
+    "publicUrl": getPublicUrl(getAbsolutePath("package.json")),
+    "appStatic": getAbsolutePath(join("public", "static")),
+    "appAssets": getAbsolutePath(join("public", "assets")),
+    "servedPath": getServedPath(getAbsolutePath("package.json")),
+    "appBuildStatic": getAbsolutePath(join("dist", "static")),
+    "appStyles": getAbsolutePath(join("public", "static", "css")),
+    "appStyleIcons": getAbsolutePath(join("src", "theme", "icons")),
+    "appHtml": getAbsolutePath(join("public", "static", "html", "index.html")),
 };

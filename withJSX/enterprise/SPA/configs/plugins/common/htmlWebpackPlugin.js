@@ -40,7 +40,7 @@ module.exports = () => [
         "appMountId": "app",
         "template": appHtml,
         "filename": "index.html",
-        "build": "." || appBuild, // TODO: Correct later
+        "build": "." || appBuild,
         "excludeAssets": [/runtime.*.js/],
         "title": REACT_APP_NAME, //
         "description": REACT_APP_DESCRIPTION,

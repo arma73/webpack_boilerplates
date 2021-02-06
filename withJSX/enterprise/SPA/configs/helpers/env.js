@@ -8,13 +8,13 @@ const dotenv = require("dotenv");
 const servedSepOS = require("../utils/servedSepOS");
 
 // Paths
-const { "dotenv": pathEnv, appPath } = require("./paths");
+const { "dotenv": pathEnv, rootPath } = require("./paths");
 
 const environment = process.env.NODE_ENV || "development";
 const envPublicUrl = process.env.PUBLIC_URL;
 const isModern = process.env.BROWSERS_ENV === "modern";
 
-let envFile = servedSepOS(appPath, `.env.${environment}`);
+let envFile = servedSepOS(rootPath, `.env.${environment}`);
 
 if (!existsSync(envFile)) {
     envFile = pathEnv;

@@ -1,20 +1,21 @@
 "use-strict";
-"use-strict";
 
 // Core
 const { merge } = require("webpack-merge");
 
 // Parts
-const bail = require("../parts/bail");
-const performance = require("../parts/performance");
-const optimization = require("../parts/optimization");
+const bail = require("../parts/production/bail");
+const target = require("../parts/production/target");
+const performance = require("../parts/production/performance");
+const optimization = require("../parts/production/optimization");
 
 // Plugins
 const plugins = require("../plugins/production");
 
 module.exports = merge(
     bail,
-    performance,
+    target,
     plugins,
+    performance,
     optimization
 );

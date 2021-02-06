@@ -2,7 +2,6 @@
 
 // Core
 const { sep } = require("path");
-const { parse } = require("url");
 
 // Utils
 const getPublicUrl = require("./getPublicUrl");
@@ -24,7 +23,7 @@ const { envPublicUrl } = require("../helpers/env");
 const getServedPath = appPackageJSON => {
     const publicUrl = getPublicUrl(appPackageJSON);
     const servedUrl =
-        envPublicUrl || (publicUrl ? parse(publicUrl).pathname : sep);
+        envPublicUrl || (publicUrl ? new URL(publicUrl).pathname : sep);
     return ensureSlash(servedUrl, true);
 };
 

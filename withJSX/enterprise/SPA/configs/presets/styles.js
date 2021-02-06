@@ -4,13 +4,13 @@
 const { production, development } = require("../helpers/options");
 
 // Loaders
-const cssLoader = require("../loaders/cssLoader");
-const sassLoader = require("../loaders/sassLoader");
-const styleLoader = require("../loaders/styleLoader");
-const cacheLoader = require("../loaders/cacheLoader");
-const threadLoader = require("../loaders/threadLoader");
-const postcssLoader = require("../loaders/postcssLoader");
-const miniCssExtract = require("../loaders/miniCssExtract");
+const cssLoader = require("../loaders/css-loader");
+const sassLoader = require("../loaders/sass-loader");
+const styleLoader = require("../loaders/style-loader");
+const cacheLoader = require("../loaders/cache-loader");
+const threadLoader = require("../loaders/thread-loader");
+const postcssLoader = require("../loaders/postcss-loader");
+const miniCssExtract = require("../loaders/miniCssExtractPlugin-loader");
 
 module.exports = () => {
     const baseLoader = () => {

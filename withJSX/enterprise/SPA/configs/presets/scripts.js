@@ -4,12 +4,12 @@
 const { development } = require("../helpers/options");
 
 // Loaders
-const sourceMapLoader = require("../loaders/sourceMapLoader");
-const babelLoader = require("../loaders/babelLoader");
-const cacheLoader = require("../loaders/cacheLoader");
-// const nullLoader = require("../loaders/nullLoader");
+const sourceMapLoader = require("../loaders/sourcemap-loader");
+const babelLoader = require("../loaders/babel-loader");
+const cacheLoader = require("../loaders/cache-loader");
+// const nullLoader = require("../loaders/null-loader");
 // TODO: Test profit
-const threadLoader = require("../loaders/threadLoader");
+const threadLoader = require("../loaders/thread-loader");
 
 module.exports = () => [
     {

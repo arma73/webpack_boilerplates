@@ -7,6 +7,9 @@ const { ProvidePlugin, DefinePlugin } = require("webpack");
 const { areaEnv, environment } = require("../../helpers/env");
 const { development, production } = require("../../helpers/options");
 
+// Utils
+const { convertObjectValuesTOJSON } = require("../../utils/replace");
+
 module.exports = () => [
     // Automatically load modules instead of having to import or require them everywhere.
     new ProvidePlugin({
@@ -20,12 +23,10 @@ module.exports = () => [
     // That's where DefinePlugin shines, set it and forget it rules for 
     // development and production builds.
     new DefinePlugin({
-        "env": {
-            ...areaEnv,
-            "BROWSER": true,
-            "NODE_ENV": environment,
-            "__DEV__": development,
-            "__PROD__": production,
-        },
+        "env": convertObjectValuesTOJSON(process.env || areaEnv),
+        "BROWSER": true,
+        "NODE_ENV": JSON.stringify(environment),
+        "__DEV__": development,
+        "__PROD__": production,
     })
 ];

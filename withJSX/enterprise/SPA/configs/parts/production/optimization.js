@@ -1,7 +1,7 @@
 "use-strict";
 
 // Plugins
-const terserWebpackPlugin = require("../plugins/production/terserWebpackPlugin");
+const terserWebpackPlugin = require("../../plugins/production/terserWebpackPlugin");
 
 // All optimizations are available for manual configuration and overrides.
 module.exports = {

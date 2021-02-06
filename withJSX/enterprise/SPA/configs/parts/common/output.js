@@ -4,8 +4,8 @@
 const { relative, resolve } = require("path");
 
 // Helpers
-const { hashName, production, development } = require("../helpers/options");
-const { appBuild, appSrc } = require("../helpers/paths");
+const { hashName, production, development } = require("../../helpers/options");
+const { appBuild, appSrc } = require("../../helpers/paths");
 
 
 // The top-level output key contains set of options instructing webpack 
@@ -14,7 +14,7 @@ const { appBuild, appSrc } = require("../helpers/paths");
 module.exports = {
     "output": {
         // The build folder.
-        "path": production ? appBuild : undefined,
+        "path": appBuild,
         // Add /* filename */ comments to generated require()s in the output.
         "pathinfo": development,
         // There will be one main bundle, and one file per asynchronous chunk.
@@ -27,10 +27,7 @@ module.exports = {
             : development && `js/${hashName}.c.js`,
 
         // We inferred the "public path" (such as / or /my-project) from homepage.
-        // We use "/" in development
-        "publicPath": development
-            ? "/"
-            : "", // TODO: Correct later
+        "publicPath": "/",
 
         // Point sourcemap entries to original disk location (format as URL on Windows)
         "devtoolModuleFilenameTemplate": production

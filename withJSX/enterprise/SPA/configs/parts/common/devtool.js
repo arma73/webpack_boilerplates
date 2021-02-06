@@ -1,6 +1,6 @@
 "use-strict";
 
-const { production } = require("../helpers/options");
+const { production } = require("../../helpers/options");
 
 const devtool = production ? false : "eval-cheap-module-source-map";
 

@@ -4,7 +4,7 @@
 const { development } = require("../helpers/options");
 const { appSrc } = require("../helpers/paths");
 
-module.exports = ({ importLoaders = 1, ...props }) => ({
+module.exports = ({ importLoaders = 1, ...props } = {}) => ({
     "loader": "css-loader",
     "options": {
         // Enables/Disables or setups number of loaders applied before CSS loader.

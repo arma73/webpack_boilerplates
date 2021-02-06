@@ -6,6 +6,7 @@
 ## Structure:
 
 * `withJSX/enterprise/SPA` - config for the React project.
+* `withJSX/enterprise/SSG` - SSG uses React and Webpack to compile modern JavaScript.
 * `withPureJS/simple/MPA` - config for multi-page application.
 
 ## License

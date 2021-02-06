@@ -5,11 +5,11 @@ const chalk = require("chalk");
 const detectPort = require("detect-port-alt");
 const inquirer = require("inquirer");
 
-const choosePort = async defaultPort => {
+const choosePort = async (defaultPort, host) => {
     try {
-        const port = await detectPort(defaultPort);
-        if (port === defaultPort) {
-            return defaultPort;
+        const port = await detectPort(defaultPort, host);
+        if (+port === +defaultPort) {
+            return String(defaultPort);
         }
 
         const message = `Port ${defaultPort} is already in use.`;
@@ -24,7 +24,7 @@ const choosePort = async defaultPort => {
             };
 
             const result = await inquirer.prompt(question);
-            return result[questionName] ? port : null;
+            return result[questionName] ? String(port) : null;
         }
 
         console.log(chalk.redBright(`➡ ${message}`));

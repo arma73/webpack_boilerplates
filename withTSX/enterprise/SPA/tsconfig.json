@@ -1,0 +1,40 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "target": "es5",
+    "pretty": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "allowUnreachableCode": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "allowJs": true,
+    "alwaysStrict": true,
+    "noImplicitReturns": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "importHelpers": false,
+    "isolatedModules": false,
+    "preserveConstEnums": true,
+    "downlevelIteration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "types": [
+      "node",
+      "react",
+      "react-dom",
+      "webpack",
+    ]
+  },
+  "extends": "./tsconfig.paths.json"
+}

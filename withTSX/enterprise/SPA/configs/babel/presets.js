@@ -1,0 +1,29 @@
+"use-strict";
+
+module.exports = ({ development, production, loose, spec, modules }) => {
+    const configs = [
+        [
+            "@babel/preset-react",
+            {
+                "runtime": "automatic",
+            }
+        ],
+        "@babel/preset-typescript",
+    ];
+
+    development && 
+        configs.unshift("@babel/preset-env");
+
+    production &&
+        configs.push([
+            "@babel/env",
+            {
+                spec,
+                loose,
+                modules,
+                "debug": false,
+            }
+        ]);
+
+    return [...configs];
+};

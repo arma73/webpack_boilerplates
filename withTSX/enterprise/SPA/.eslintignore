@@ -1,0 +1,14 @@
+node_modules
+dist
+**/__tests__/**
+**/*.test.tsx
+**/*.scss.d.ts
+jest.setup.js
+jest.config.js
+babel.config.js
+metro.config.js
+postcss.config.js
+.eslint.typescript.js
+lint-staged.config.js
+configs/*
+.eslintrc.js

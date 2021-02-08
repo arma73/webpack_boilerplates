@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "rootDir": "./",
+    "baseUrl": "src",
+    "outDir": "dist",
+    "paths": {
+      "app/*": ["app/*"],
+      "i18n/*": ["i18n/*"],
+      "utils/*": ["utils/*"],
+      "hooks/*": ["hooks/*"],
+      "pages/*": ["pages/*"],
+      "routes/*": ["routes/*"],
+      "theme/*": ["theme/*"],
+      "assets/*": ["assets/*"],
+      "settings/*": ["settings/*"],
+      "services/*": ["services/*"],
+      "components/*": ["components/*"],
+      "tslib" : ["node_modules/tslib/tslib.d.ts"]
+    },
+    "typeRoots": [
+      "node_modules/@types",
+      "typings"
+    ]
+  },
+  "exclude": [
+    "dist",
+    "configs/*",
+    "node_modules",
+    "**/node_modules/*",
+    "src/**/*.test.tsx",
+    "src/**/*.spec.tsx"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "typings/**/*.d.ts"
+  ]
+}
